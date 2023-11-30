@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\XPRTZ.Webshop.API.props" />
-</Project>
