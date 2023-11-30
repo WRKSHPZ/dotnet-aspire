@@ -4,6 +4,7 @@
 
 @inject Basket _basket;
 @inject HttpClient _httpClient;
+@inject IDialogService _dialogService
 
 <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">Checkout</MudText>
 <MudGrid Spacing="6" Class="mt-16">
@@ -48,9 +49,9 @@
                     <MudListItem Icon="@Icons.Material.Filled.ShoppingBasket">
                         <div class="d-flex">
                             <MudText>@item.Name</MudText>
-                                <MudText Inline="true" Class="ml-auto">€ @item.Price</MudText>
-                            </div>
-                        </MudListItem>
+                            <MudText Inline="true" Class="ml-auto">€ @item.Price</MudText>
+                        </div>
+                    </MudListItem>
                 }
             </MudList>
             <div class="mt-auto">
@@ -69,6 +70,10 @@
     {
         var result = await _httpClient.PostAsJsonAsync($"api/orders", _basket.Products.Select(p => p.EAN));
 
-        var message = await result.Content.ReadFromJsonAsync<IEnumerable<string>>();
+        var messages = await result.Content.ReadFromJsonAsync<IEnumerable<string>>();
+
+        var parameters = new DialogParameters<CheckoutDialog> { { x => x.Messages, messages } };
+
+        await _dialogService.ShowAsync<CheckoutDialog>("Order Status", parameters);
     }
 }

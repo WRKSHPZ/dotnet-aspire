@@ -1,5 +1,30 @@
-﻿<h3>CheckoutDialog</h3>
+﻿<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+            <MudIcon Icon="@Icons.Material.Filled.ShoppingCartCheckout" Class="mr-3 mb-n1" />
+            Order Status
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudList>
+            @foreach (var message in Messages)
+            {
+                <MudListItem>@message</MudListItem>
+            }
+        </MudList>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Ok</MudButton>
+    </DialogActions>
+</MudDialog>
 
 @code {
+    [CascadingParameter] MudDialogInstance? MudDialog { get; set; }
 
+    [Parameter] public IEnumerable<string> Messages { get; set; } = Enumerable.Empty<string>();
+
+    private void Cancel()
+    {
+        MudDialog?.Cancel();
+    }
 }
