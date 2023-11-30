@@ -1,8 +1,12 @@
 using MassTransit;
+using Microsoft.Extensions.Hosting;
+using RabbitMQ.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.AddRabbitMQ("servicebus");
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -13,7 +17,9 @@ builder.Services.AddMassTransit(config =>
 {
     config.UsingRabbitMq((context, cfg) =>
     {
-        cfg.Host("localhost", "/", host =>
+        var connection = context.GetRequiredService<IConnection>();
+
+        cfg.Host(new Uri(connection.Endpoint.ToString()), "/", host =>
         {
             host.Username("guest");
             host.Password("guest");

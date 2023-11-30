@@ -16,7 +16,7 @@ builder.Services.AddMassTransit(configure =>
     {
         var connection = context.GetRequiredService<IConnection>();
 
-        cfg.Host(connection.Endpoint.HostName, "/", host =>
+        cfg.Host(new Uri(connection.Endpoint.ToString()), "/", host =>
         {
             host.Username("guest");
             host.Password("guest");
