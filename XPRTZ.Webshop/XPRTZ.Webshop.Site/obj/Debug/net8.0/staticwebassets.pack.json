@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\R4117314\\source\\repos\\XPRTZ.Webshop\\XPRTZ.Webshop.Site\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\XPRTZ.Webshop.Site.bundle.scp.css",
+      "PackagePath": "staticwebassets\\XPRTZ.Webshop.Site.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\R4117314\\source\\repos\\XPRTZ.Webshop\\XPRTZ.Webshop.Site\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\R4117314\\source\\repos\\XPRTZ.Webshop\\XPRTZ.Webshop.Site\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.XPRTZ.Webshop.Site.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.XPRTZ.Webshop.Site.props",
+      "PackagePath": "build\\XPRTZ.Webshop.Site.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.XPRTZ.Webshop.Site.props",
+      "PackagePath": "buildMultiTargeting\\XPRTZ.Webshop.Site.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.XPRTZ.Webshop.Site.props",
+      "PackagePath": "buildTransitive\\XPRTZ.Webshop.Site.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

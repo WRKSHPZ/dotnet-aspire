@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.RabbitMQ.Client" Version="8.0.0-preview.1.23557.2" />
+    <PackageReference Include="Bogus" Version="34.0.2" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XPRTZ.Webshop.Models\XPRTZ.Webshop.Models.csproj" />
+    <ProjectReference Include="..\XPRTZ.Webshop.ServiceDefaults\XPRTZ.Webshop.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>

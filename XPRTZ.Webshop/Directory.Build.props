@@ -1,0 +1,14 @@
+<Project>
+	<PropertyGroup>
+		<GenerateDocumentationFile>False</GenerateDocumentationFile>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<NuGetAuditMode>all</NuGetAuditMode>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<WarningsAsErrors>CS8601;CS8602;CS8603;CS8604;CS8613;CS8631;CS8618;CS8765</WarningsAsErrors>
+	</PropertyGroup>
+</Project>
+

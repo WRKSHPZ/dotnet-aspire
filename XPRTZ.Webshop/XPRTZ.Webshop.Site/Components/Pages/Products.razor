@@ -1,0 +1,46 @@
+﻿@page "/"
+
+@using XPRTZ.Webshop.Models.Product
+
+@inject HttpClient _httpClient
+@inject NavigationManager _navigationManager;
+
+
+@if (_productCatalogItems is null)
+{
+    <MudText Align="Align.Center">Please wait while our fancy products load!</MudText>
+}
+else
+{
+    <MudGrid Justify="Justify.FlexStart">
+        @foreach (var item in _productCatalogItems)
+        {
+            <MudItem xs="3">
+                <MudCard Outlined="true">
+                    <MudCardContent>
+                        <MudText>@item.Name</MudText>
+                            <MudText Typo="Typo.body2">€ @item.Price</MudText>
+                            <MudText Typo="Typo.body2">Available items: @item.Stock</MudText>
+                        </MudCardContent>
+                        <MudCardActions>
+                            <MudButton Variant="Variant.Text" OnClick="@((e) => NavigateToDetails(item.EAN))">Learn more</MudButton>
+                        </MudCardActions>
+                    </MudCard>
+                </MudItem>
+        }
+    </MudGrid>
+}
+@code {
+    private IEnumerable<ProductCatalogItem>? _productCatalogItems;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _productCatalogItems = await _httpClient.GetFromJsonAsync<IEnumerable<ProductCatalogItem>>("api/products");
+        StateHasChanged();
+    }
+
+    private void NavigateToDetails(string ean)
+    {
+        _navigationManager.NavigateTo($"/productdetails/{ean}");
+    }
+}

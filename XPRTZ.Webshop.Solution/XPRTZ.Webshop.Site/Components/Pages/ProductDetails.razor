@@ -1,0 +1,58 @@
+﻿@page "/productdetails/{ProductEAN}"
+
+@using XPRTZ.Webshop.Models.Product
+@using XPRTZ.Webshop.Site.Models
+
+@inject HttpClient _httpClient;
+@inject NavigationManager _navigationManager;
+@inject Basket _basket;
+
+@if (_productDetails is null)
+{
+    <MudText Align="Align.Center">Please wait while our fancy products details are loaded!</MudText>
+}
+else
+{
+    <MudText Typo="Typo.h5">@_productDetails.Name</MudText>
+    <MudText Typo="Typo.body2">@_productDetails.Description</MudText>
+    <MudText Typo="Typo.body1">€ @_productDetails.Price</MudText>
+
+    <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+
+    <MudGrid Justify="Justify.FlexStart">
+        @foreach (var item in _productDetails.Reviews)
+        {
+            <MudItem xs="3">
+                <MudCard Outlined="true">
+                    <MudCardContent>
+                        <MudText>@item</MudText>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+        }
+    </MudGrid>
+
+    <MudButton Variant="Variant.Filled" DisableElevation="true" Color="Color.Primary" Size="Size.Large" Class="mt-8" OnClick="@((e) => AddToBasket())">Add to basket</MudButton>
+}
+
+@code {
+    [Parameter] public string? ProductEAN { get; set; }
+    private ProductDetailsResponse? _productDetails;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _productDetails = await _httpClient.GetFromJsonAsync<ProductDetailsResponse?>($"api/products/{ProductEAN}");
+
+        StateHasChanged();
+    }
+
+    private void AddToBasket()
+    {
+        if (_productDetails is not null)
+        {
+            _basket.Products.Add(_productDetails);
+        }
+
+        _navigationManager.NavigateTo("/");
+    }
+}

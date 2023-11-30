@@ -1,0 +1,64 @@
+﻿@page "/checkout"
+
+@using XPRTZ.Webshop.Site.Models
+
+@inject Basket _basket;
+
+<MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">Checkout</MudText>
+<MudGrid Spacing="6" Class="mt-16">
+    <MudItem xs="7">
+        <MudText Typo="Typo.h5" GutterBottom="true">Billing address</MudText>
+        <MudGrid>
+            <MudItem xs="12">
+                <MudTextField T="string" Label="Email" />
+            </MudItem>
+            <MudItem xs="12">
+                <MudTextField T="string" Label="Mobile number" />
+            </MudItem>
+            <MudItem xs="12">
+                <MudTextField T="string" Label="Personal number" />
+            </MudItem>
+            <MudItem xs="6">
+                <MudTextField T="string" Label="First name" />
+            </MudItem>
+            <MudItem xs="6">
+                <MudTextField T="string" Label="Last name" />
+            </MudItem>
+            <MudItem xs="12">
+                <MudTextField T="string" Label="Address" />
+            </MudItem>
+            <MudItem xs="6">
+                <MudTextField T="string" Label="Postal code" />
+            </MudItem>
+            <MudItem xs="6">
+                <MudTextField T="string" Label="Postal Area" />
+            </MudItem>
+            <MudItem xs="12" Class="d-flex justify-center">
+                <MudButton Variant="Variant.Filled" DisableElevation="true" Color="Color.Primary" Size="Size.Large" Class="mt-8">Place Order</MudButton>
+            </MudItem>
+        </MudGrid>
+    </MudItem>
+    <MudItem xs="5">
+        <MudText Typo="Typo.h5" GutterBottom="true">Cart</MudText>
+        <MudPaper Class="d-flex flex-column" Style="height:100%;" Outlined="true">
+            <MudList Clickable="true">
+                @foreach (var item in _basket.Products)
+                {
+                    <MudListItem Icon="@Icons.Material.Filled.ShoppingBasket">
+                        <div class="d-flex">
+                            <MudText>@item.Name</MudText>
+                                <MudText Inline="true" Class="ml-auto">€ @item.Price</MudText>
+                            </div>
+                        </MudListItem>
+                }
+            </MudList>
+            <div class="mt-auto">
+                <MudDivider />
+                <div class="d-flex pa-4">
+                    <MudText>Total:</MudText>
+                    <MudText Class="ml-auto"><b>€ @_basket.Products.Sum(p => p.Price)</b></MudText>
+                </div>
+            </div>
+        </MudPaper>
+    </MudItem>
+</MudGrid>

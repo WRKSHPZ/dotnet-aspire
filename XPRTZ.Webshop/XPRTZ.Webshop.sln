@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPRTZ.Webshop.OrderService", "Xprtz.Webshop.OrderProcessor\XPRTZ.Webshop.OrderService.csproj", "{0FDE000A-2AEF-425A-97B9-2EA23BDD8664}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPRTZ.Webshop.ProductService", "Xprtz.Webshop.ProductService\XPRTZ.Webshop.ProductService.csproj", "{80AB86A1-11D2-4201-97F2-BE004808069A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPRTZ.Webshop.API", "XPRTZ.Webshop.API\XPRTZ.Webshop.API.csproj", "{15DD6DE2-27A7-460C-B7B5-52D5596A6494}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPRTZ.Webshop.Models", "XPRTZ.Webshop.Models\XPRTZ.Webshop.Models.csproj", "{290C6C82-FC7A-4EE6-A3B8-B6A262E11464}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPRTZ.Webshop.Site", "XPRTZ.Webshop.Site\XPRTZ.Webshop.Site.csproj", "{3437932F-BB1B-47BE-87B0-EDFD3F10BE12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FDE000A-2AEF-425A-97B9-2EA23BDD8664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FDE000A-2AEF-425A-97B9-2EA23BDD8664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FDE000A-2AEF-425A-97B9-2EA23BDD8664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FDE000A-2AEF-425A-97B9-2EA23BDD8664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80AB86A1-11D2-4201-97F2-BE004808069A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80AB86A1-11D2-4201-97F2-BE004808069A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80AB86A1-11D2-4201-97F2-BE004808069A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80AB86A1-11D2-4201-97F2-BE004808069A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15DD6DE2-27A7-460C-B7B5-52D5596A6494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15DD6DE2-27A7-460C-B7B5-52D5596A6494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15DD6DE2-27A7-460C-B7B5-52D5596A6494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15DD6DE2-27A7-460C-B7B5-52D5596A6494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{290C6C82-FC7A-4EE6-A3B8-B6A262E11464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290C6C82-FC7A-4EE6-A3B8-B6A262E11464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290C6C82-FC7A-4EE6-A3B8-B6A262E11464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290C6C82-FC7A-4EE6-A3B8-B6A262E11464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3437932F-BB1B-47BE-87B0-EDFD3F10BE12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3437932F-BB1B-47BE-87B0-EDFD3F10BE12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3437932F-BB1B-47BE-87B0-EDFD3F10BE12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3437932F-BB1B-47BE-87B0-EDFD3F10BE12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53774610-5421-45BE-B55D-CDCE81035797}
+	EndGlobalSection
+EndGlobal

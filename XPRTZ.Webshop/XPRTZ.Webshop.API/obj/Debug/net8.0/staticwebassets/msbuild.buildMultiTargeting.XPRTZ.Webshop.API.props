@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\XPRTZ.Webshop.API.props" />
+</Project>
